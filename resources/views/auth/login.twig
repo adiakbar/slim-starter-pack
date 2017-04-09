@@ -1,0 +1,28 @@
+{% extends "templates/frontend.twig" %}
+
+{% block content %}
+<div class="row">
+	<div class="col-md-6">
+		<h3>Register</h3>
+		<form action="{{ path_for('login') }}" method="POST">
+			<div class="form-group {{ errors.username ? 'has-danger' : '' }}">
+				<label>Username</label>
+				<input type="text" name="username" class="form-control" value="{{ old.username }}">
+				{% if errors.username %}
+				<small class="form-control-feedback">{{ errors.username | first }}</small>
+				{% endif %}
+			</div>
+			<div class="form-group {{ errors.password ? 'has-danger' : '' }}">
+				<label>Password</label>
+				<input type="password" name="password" class="form-control">
+				{% if errors.password %}
+				<small class="form-control-feedback">{{ errors.password | first }}</small>
+				{% endif %}
+			</div>
+			<button type="submit" class="btn btn-primary">Login</button>
+		</form>
+	</div>
+</div>
+
+
+{% endblock %}

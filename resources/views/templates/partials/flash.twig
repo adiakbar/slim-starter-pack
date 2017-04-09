@@ -1,0 +1,23 @@
+{% if message.success %}
+<div class="alert alert-success">
+	{{ message.success[0] }}
+</div>
+{% endif %}
+
+{% if message.info %}
+<div class="alert alert-info">
+	{{ message.info[0] }}
+</div>
+{% endif %}
+
+{% if message.warning %}
+<div class="alert alert-warning">
+	{{ message.warning[0] }}
+</div>
+{% endif %}
+
+{% if message.danger %}
+<div class="alert alert-danger">
+	{{ message.danger[0] }}
+</div>
+{% endif %}
